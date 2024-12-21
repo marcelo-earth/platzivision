@@ -15,10 +15,27 @@ def chat():
         ]
 
         for message in data['messages']:
-            formatted_messages.append({
-                "role": message["role"],
-                "content": message["content"],
-            })
+            if 'image_data' in message:
+                # Procesamiento de la imagen
+                content_parts = [{"type": "text", "text": message['content']}]
+
+                for image_data_base64 in message['image_data']:
+                    content_parts.append({
+                        "type": "image_url",
+                        "image_url": {
+                            "url": f"data:image/png,base64,{image_data_base64}"
+                        }
+                    })
+
+                formatted_messages.append({
+                    "role": message["role"],
+                    "content": content_parts,
+                })
+            else:
+                formatted_messages.append({
+                    "role": message["role"],
+                    "content": message["content"],
+                })
         
         client = OpenAI()
 
