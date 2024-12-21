@@ -6,11 +6,12 @@
 
 <img src="./.github/cover.png" alt="PlatziVision" width="100%">
 
-👋 ¡Hola! Este repositorio contiene el proyecto final del curso de OpenAI API. Encontrarás los commits asociados a cada clase, así como ilustraciones de cómo funciona PlatziVision.
+👋 ¡Hola! Este repositorio contiene el proyecto final del curso de OpenAI API. Puedes empezar [instalando el proyecto](#instalación) y luego [revisar los commits por clase](#commits-por-clase).
 
 ## 🚀 Instalación
 
 1. Clona el repositorio
+
 ```bash
 git clone https://github.com/platzi/platzivision.git
 ```
@@ -44,17 +45,30 @@ pip install -r requirements.txt
 ```
 
 5. Inicia el servidor de la API
+
 ```bash
 python app.py
 ```
 
 ¡Listo! Ahora tenemos el servidor web corriendo en http://localhost:3000 y el servidor de la API en http://127.0.0.1:5000. Con esto ya podemos empezar con las tareas pendientes para completar el proyecto:
 
-- Procesar los mensajes de la interfaz
-- Retornar la respuesta vía streaming
-- Agregar soporte de imágenes
-- Agregar una función de generación de imágenes
+1. Procesar los mensajes de la interfaz
+2. Retornar la respuesta vía streaming
+3. Agregar soporte de imágenes
+4. Agregar una función de generación de imágenes
 
+## 🎄 Commits por clase
+
+Puedes copiar el comando de cada commit y pegarlo en tu terminal para revisar el código avanzado de cada clase.
+
+| Clase                                                | Commit                | Cambios                                                   |
+| ---------------------------------------------------- | --------------------- | --------------------------------------------------------- |
+| Integración de GPT-4o con streaming en PlatziVision  | `git checkout 9875f7` | Integración de respuestas con transmisión en tiempo real  |
+| Soporte de procesamiento de imágenes en PlatziVision | `git checkout 7e2f9c` | Soporte para el procesamiento de imágenes.                |
+| Generación de imágenes con DALL·E 3\*                | `git checkout c9ed81` | Añade la función de generación de imágenes.               |
+| Generación de imágenes en PlatziVision               | `git checkout 45bdda` | Integración de generación de imágenes usando herramientas |
+
+\* La clase de _Generación de imágenes con DALL·E 3_ se realizó en el repositorio de `/curso-openai-api`, pero se incluye aquí como referencia que la integramos dentro de la siguiente clase _Generación de imágenes en PlatziVision_.
 
 ## 📚 Estructura del proyecto
 
