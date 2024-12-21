@@ -3,6 +3,26 @@ import openai
 import json
 from openai import OpenAI
 
+
+def generate_image(prompt: str, quality: str = "standard") -> str:
+    """
+    Genera una imagen utilizando el modelo DALL-E 3 de OpenAI.
+    """
+    try:
+        response = openai.images.generate(
+            model="dall-e-3",
+            prompt=prompt,
+            quality=quality,
+            n=1,
+        )
+        
+        print("Imagen generada correctamente")
+        return response.data[0].url
+        
+    except Exception as e:
+        print(f"Generación de imagen fallida: {str(e)}")
+        raise
+
 def chat():
     try:
         data = request.json
